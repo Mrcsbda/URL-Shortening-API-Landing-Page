@@ -10,5 +10,14 @@
         <section class="image-container">
         </section>
     </article>
-
+    <article class="cards-and-link-shortening-container">
+        <section class="link-shortening-container">
+            <div class="link-shortening" [class.active]="active">
+                <input type="text" name="" id="link" placeholder="Shorten a link here..." #link>
+                <p>Please add a link</p>
+                <button (click)="shortenLink(link.value)">Shorten it!</button>
+            </div>
+            <div class="shortened-links"></div>
+        </section>
+    </article>
 </main>
