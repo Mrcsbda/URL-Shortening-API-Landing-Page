@@ -1,0 +1,23 @@
+<div class="nav-mobile-container">
+    <div class="mobile-nav">
+        <img src="../../assets/nav/logo.svg" alt="">
+        <div class="button" (click)="activeButton()" [class.activeButton]="active">
+            <div class="l1"></div>
+            <div class="l2"></div>
+            <div class="l3"></div>
+        </div>
+    </div>
+    <div class="elements-container" [class.activeElementsContainer]="active">
+        <ul>
+            <li>Features</li>
+            <li>Pricing</li>
+            <li>Resources</li>
+        </ul>
+        <hr>
+        <ul>
+            <li>Login</li>
+            <li class="SignUp">Sign Up</li>
+        </ul>
+    </div>
+</div>
+<div class="nav-desktop-container"></div>

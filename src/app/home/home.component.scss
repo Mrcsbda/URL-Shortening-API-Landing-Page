@@ -1,0 +1,44 @@
+@import "../shared/variables.scss";
+@import "../shared/texts.scss";
+
+.home-container {
+    .information-container {
+        display: flex;
+        flex-direction: column-reverse;
+        .information {
+            width: 100%;
+            .title {
+                margin: 0;
+                text-align: center;
+                line-height: 3rem;
+                padding: 2.5rem 2rem 1rem 2rem;
+                @include texts(2.5rem, $VeryDarkViolet, 700);
+            }
+            .text {
+                margin: 0;
+                text-align: center;
+                line-height: 1.8rem;
+                padding: 0.2rem 2rem 1.5rem 2rem;
+                @include texts(1.1rem, $Gray, 500);
+            }
+            .button-container {
+                text-align: center;
+                .button {
+                    border: none;
+                    border-radius: 2rem;
+                    padding: 0.8rem 2rem;
+                    background-color: $Cyan;
+                    @include texts(1.3rem, white, 700); 
+                }
+            }
+        }
+        .image-container {
+            width: 100%;
+            height: 86vw;
+            background-size: 130%;
+            background-repeat: no-repeat;
+            background-position: 2rem 0rem;
+            background-image: url('../../assets/home/illustration-working.svg');
+        }
+    }
+}

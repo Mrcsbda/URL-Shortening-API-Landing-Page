@@ -1,0 +1,91 @@
+@import "../shared/variables.scss";
+@import "../shared/texts.scss";
+
+.nav-mobile-container {
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1.7rem 2rem 1.7rem;
+  .mobile-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .button {
+      gap: 6px;
+      display: flex;
+      flex-direction: column;
+      div {
+        width: 40px;
+        height: 5px;
+        position: relative;
+        transform: rotate(0);
+        background-color: $Gray;
+        transition: transform 1s;
+      }
+    }
+    .activeButton {
+      .l1 {
+        top: 3.3rem;
+        right: 1.8rem;
+        position: absolute;
+        transition: transform 1s;
+        transform: rotate(140deg);
+      }
+      .l2 {
+        opacity: 0;
+      }
+      .l3 {
+        top: 3.3rem;
+        right: 1.8rem;
+        position: absolute;
+        transition: transform 1s;
+        transform: rotate(-140deg);
+      }
+    }
+  }
+  .elements-container {
+    top: 110px;
+    width: 86%;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    padding: 1rem 0rem;
+    border-radius: 0.8rem;
+    transition: opacity 0.5s;
+    background-color: $DarkViolet;
+    ul {
+        display: flex;
+        padding: 2rem 1rem;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+        li {
+            list-style: none;  
+            text-align: center;    
+            @include texts(1.2rem, white, 700);
+        }
+        .SignUp {
+          width: 80%;
+            border-radius: 2rem;
+            padding: 0.8rem 0rem;
+            background-color: $Cyan;
+        }
+    }
+    hr {
+        width: 80%;
+        height: 1px;
+        margin: auto;
+        border: none;
+        opacity: 0.2;
+        background-color: rgb(214, 214, 214);
+    }
+  }
+  .activeElementsContainer {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s;
+}
+}
+.nav-desktop-container {
+    display: none;
+}
