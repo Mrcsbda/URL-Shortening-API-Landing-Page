@@ -43,11 +43,11 @@
     }
   }
   .cards-and-link-shortening-container {
-    background-color: $GrayishViolet;
     position: relative;
+    background-color: $GrayishViolet;
     .link-shortening-container {
       display: flex;
-      padding: 4rem 2rem;
+      padding: 3rem;
       align-items: center;
       flex-direction: column;
       .link-shortening {
@@ -80,7 +80,7 @@
         button {
           width: 100%;
           border: none;
-          margin-top: 1.1rem;
+          margin-top: 1rem;
           padding: 0.7rem 0;
           border-radius: 0.3rem;
           background-color: $Cyan;
@@ -97,6 +97,109 @@
         }
         p {
           display: inline;
+        }
+      }
+    }
+    .shortened-link-result-container {
+      padding: 2.5rem 1.7rem;
+      .result {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        border-radius: 0.5rem;
+        background-color: white;
+        .full-link {
+          padding: 1rem;
+          white-space: nowrap;
+          @include texts(0.9rem, $VeryDarkViolet, 500);
+          border-bottom: 1px solid rgb(218, 218, 218);
+          p {
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+        .shortened-link{
+          padding: 1rem;
+          @include texts(0.9rem, $Cyan, 500);
+          p {
+            margin-bottom: 0.7rem;
+          }
+          button {
+            width: 100%;
+            border: none;
+            padding: 0.5rem;
+            text-align: center;
+            border-radius: 0.3rem;
+            background-color: $Cyan;
+            @include texts(0.9rem, white, 500);
+          }
+        }
+      }
+    }
+    .cards-information-container {
+      display: flex;
+      flex-direction: column;
+      .title2{
+        padding-top: 1rem;
+        text-align: center;
+        @include texts(1.7rem, $VeryDarkViolet, 700);
+      }
+      .text2 {
+        text-align: center;
+        line-height: 1.7rem;
+        margin-bottom: 3rem;
+        padding: 0.2rem 2rem 1.5rem 2rem;
+        @include texts(1rem, #9F9FA7, 500);
+      }
+    }
+    .cards {
+      display: flex;
+      position: relative;
+      align-items: center;
+      flex-direction: column;
+      .line {
+        top: 0;
+        left: 50%;
+        width: 5px;
+        z-index: 0;
+        height: 90%;
+        position: absolute;
+        background-color: $Cyan;
+      }
+      .card {
+        width: 90%;
+        position: relative;
+        margin-bottom: 4rem;
+        border-radius: 0.4rem;
+        background-color: white;
+        padding: 4.5rem 1rem 2rem 1rem;
+        .icon-container {
+          left: 50%;
+          top: -31px;
+          display: flex;
+          padding: 1rem;
+          border-radius: 50%;
+          margin-left: -31px;
+          position: absolute;
+          align-items: center;
+          justify-content: center;
+          background-color: $DarkViolet;
+          img {
+            width: 32px;
+          }
+        }
+        .title-card {
+          margin: 0;
+          text-align: center;
+          padding-bottom: 0.5rem;
+          @include texts(1.3rem, $VeryDarkViolet, 700);
+        }
+        .text-card {
+          margin: 0;
+          text-align: center;
+          line-height: 1.6rem;
+          padding: 0.5rem 0.9rem;
+          @include texts(1rem, $Gray, 500);
         }
       }
     }

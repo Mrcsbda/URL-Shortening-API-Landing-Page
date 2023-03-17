@@ -1,23 +1,78 @@
 <main class="home-container">
-    <article class="information-container">
-        <section class="information">
-            <h1 class="title">More than just shorter links</h1>
-            <p class="text">Build your brand&apos;s recognition and get detailed insights on how your links are performing.</p>
-            <div class="button-container">
-                <button class="button">Get Started</button>
+  <article class="information-container">
+    <section class="information">
+      <h1 class="title">More than just shorter links</h1>
+      <p class="text">
+        Build your brand&apos;s recognition and get detailed insights on how
+        your links are performing.
+      </p>
+      <div class="button-container">
+        <button class="button">Get Started</button>
+      </div>
+    </section>
+    <section class="image-container"></section>
+  </article>
+  <article class="cards-and-link-shortening-container">
+    <section class="link-shortening-container">
+      <div class="link-shortening" [class.active]="active">
+        <input
+          type="text"
+          name=""
+          id="link"
+          placeholder="Shorten a link here..."
+          #link
+        />
+        <p>Please add a link</p>
+        <button (click)="shortenLink(link.value)">Shorten it!</button>
+      </div>
+      <div class="shortened-links"></div>
+    </section>
+    <section class="shortened-link-result-container">
+      <div class="result">
+        <div class="full-link">
+          <p>https://www.frontendmentor.io</p>
+        </div>
+        <div class="shortened-link">
+          <p>https://rel.ink/k4lKyk</p>
+          <button>Copy</button>
+        </div>
+      </div>
+      <div class="result">
+        <div class="full-link">
+          <p>https://www.linkedin.com/in/mariana-casta%C3%B1eda/</p>
+        </div>
+        <div class="shortened-link">
+          <p>https://rel.ink/gob3X9</p>
+          <button>Copy</button>
+        </div>
+      </div>
+      <div class="result">
+        <div class="full-link">
+          <p>https://www.frontendmentor.io</p>
+        </div>
+        <div class="shortened-link">
+          <p>https://rel.ink/k4lKyk</p>
+          <button>Copy</button>
+        </div>
+      </div>
+    </section>
+    <section class="cards--container">
+      <div class="cards-information-container">
+        <h2 class="title2">Advanced Statistics</h2>
+        <p class="text2">Track how your links are performing across the web with our advanced statistics dashboard.</p>
+      </div>
+      <div class="cards">
+        <div class="line"></div>
+        <div class="card" *ngFor="let card of cardsInformation">
+            <div class="icon-container">
+                <img class="icon" [src]="card.img" alt="">
             </div>
-        </section>
-        <section class="image-container">
-        </section>
-    </article>
-    <article class="cards-and-link-shortening-container">
-        <section class="link-shortening-container">
-            <div class="link-shortening" [class.active]="active">
-                <input type="text" name="" id="link" placeholder="Shorten a link here..." #link>
-                <p>Please add a link</p>
-                <button (click)="shortenLink(link.value)">Shorten it!</button>
-            </div>
-            <div class="shortened-links"></div>
-        </section>
-    </article>
+            <h3 class="title-card">{{card.title}}</h3>
+            <p class="text-card">{{card.text}}</p>
+        </div>
+      </div>
+    </section>
+  </article>
 </main>
+
+
