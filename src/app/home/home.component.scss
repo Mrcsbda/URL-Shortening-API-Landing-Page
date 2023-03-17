@@ -160,9 +160,10 @@
       .line {
         top: 0;
         left: 50%;
-        width: 5px;
+        width: 7px;
         z-index: 0;
         height: 90%;
+        margin-left: -2px;
         position: absolute;
         background-color: $Cyan;
       }
@@ -202,6 +203,29 @@
           @include texts(1rem, $Gray, 500);
         }
       }
+    }
+  }
+  .advertisement-contianer{
+    display: flex;
+    padding: 6rem 2rem;
+    align-items: center;
+    background-size: cover;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-color: $DarkViolet;
+    background-image: url("../../assets/home/bg-boost-mobile.svg"); 
+    .advertisement {
+      padding: 1rem 0;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      @include texts(1.6rem, white, 700);
+    }
+    button {
+      border: none;
+      border-radius: 2rem;
+      padding: 0.7rem 2.5rem;
+      background-color: $Cyan;
+      @include texts(1.1rem, white, 500);
     }
   }
 }
