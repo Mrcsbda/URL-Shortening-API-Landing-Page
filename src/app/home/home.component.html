@@ -14,8 +14,9 @@
   </article>
   <article class="cards-and-link-shortening-container">
     <section class="link-shortening-container">
-      <div class="link-shortening" [class.active]="active">
-        <input
+      <div class="link-shortening">
+        <div class="input-container" [class.active]="active">
+          <input
           type="text"
           name=""
           id="link"
@@ -23,6 +24,7 @@
           #link
         />
         <p>Please add a link</p>
+        </div>
         <button (click)="shortenLink(link.value)">Shorten it!</button>
       </div>
       <div class="shortened-links"></div>
@@ -63,7 +65,7 @@
       </div>
       <div class="cards">
         <div class="line"></div>
-        <div class="card" *ngFor="let card of cardsInformation">
+        <div [class]="card.class" *ngFor="let card of cardsInformation">
             <div class="icon-container">
                 <img class="icon" [src]="card.img" alt="">
             </div>

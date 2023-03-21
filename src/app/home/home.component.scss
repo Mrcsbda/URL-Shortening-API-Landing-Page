@@ -63,19 +63,23 @@
         background-color: $DarkViolet;
         background-position: top right;
         background-image: url("../../assets/home/bg-shorten-mobile.svg");
-        input {
-          width: 100%;
-          border: none;
-          outline: none;
-          padding: 0.8rem 1rem;
-          border-radius: 0.3rem;
-          @include texts(0.9rem, $VeryDarkViolet, 500);
-        }
-        p {
-          margin: 0;
-          display: none;
-          padding: 0.5rem 0 0 0;
-          @include texts(0.9rem, $Red, 500);
+        .input-container {
+          display: flex;
+          flex-direction: column;
+          input {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 0.8rem 1rem;
+            border-radius: 0.3rem;
+            @include texts(0.9rem, $VeryDarkViolet, 500);
+          }
+          p {
+            margin: 0;
+            display: none;
+            padding: 0.5rem 0 0 0;
+            @include texts(0.9rem, $Red, 500);
+          }
         }
         button {
           width: 100%;
@@ -86,17 +90,17 @@
           background-color: $Cyan;
           @include texts(1.1rem, white, 700);
         }
-      }
-      .active {
-        input {
+        .active {
+          input {
             outline: 2px solid $Red;
             &::placeholder {
-               color: $Red;
-               opacity: 0.5;
+              color: $Red;
+              opacity: 0.5;
             }
-        }
-        p {
-          display: inline;
+          }
+          p {
+            display: inline;
+          }
         }
       }
     }
@@ -118,7 +122,7 @@
             text-overflow: ellipsis;
           }
         }
-        .shortened-link{
+        .shortened-link {
           padding: 1rem;
           @include texts(0.9rem, $Cyan, 500);
           p {
@@ -139,7 +143,7 @@
     .cards-information-container {
       display: flex;
       flex-direction: column;
-      .title2{
+      .title2 {
         padding-top: 1rem;
         text-align: center;
         @include texts(1.7rem, $VeryDarkViolet, 700);
@@ -149,7 +153,7 @@
         line-height: 1.7rem;
         margin-bottom: 3rem;
         padding: 0.2rem 2rem 1.5rem 2rem;
-        @include texts(1rem, #9F9FA7, 500);
+        @include texts(1rem, #9f9fa7, 500);
       }
     }
     .cards {
@@ -205,7 +209,7 @@
       }
     }
   }
-  .advertisement-contianer{
+  .advertisement-contianer {
     display: flex;
     padding: 6rem 2rem;
     align-items: center;
@@ -213,7 +217,7 @@
     flex-direction: column;
     background-repeat: no-repeat;
     background-color: $DarkViolet;
-    background-image: url("../../assets/home/bg-boost-mobile.svg"); 
+    background-image: url("../../assets/home/bg-boost-mobile.svg");
     .advertisement {
       padding: 1rem 0;
       text-align: center;
@@ -226,6 +230,226 @@
       padding: 0.7rem 2.5rem;
       background-color: $Cyan;
       @include texts(1.1rem, white, 500);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-container {
+    .information-container {
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 9rem;
+      .information {
+        width: 100%;
+        padding: 0 0 0 8rem;
+        .title {
+          text-align: left;
+          line-height: 4.5rem;
+          padding: 0 0 0.5rem 0;
+          @include texts(4.5rem, $VeryDarkViolet, 700);
+        }
+        .text {
+          width: 80%;
+          text-align: left;
+          line-height: 2rem;
+          padding: 0 0 0.5rem 0;
+          margin-bottom: 1rem;
+          @include texts(1.3rem, $Gray, 500);
+        }
+        .button-container {
+          text-align: left;
+          margin-bottom: 0rem;
+          .button {
+            padding: 0.8rem 2rem;
+            background-color: $Cyan;
+            @include texts(1.3rem, white, 700);
+            &:hover {
+              opacity: 0.6;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .image-container {
+        height: 38vw;
+        background-size: 115%;
+        background-repeat: no-repeat;
+        background-position: 2rem 0rem;
+        background-image: url("../../assets/home/illustration-working.svg");
+      }
+    }
+    .cards-and-link-shortening-container {
+      position: relative;
+      padding-bottom: 10rem;
+      background-color: $GrayishViolet;
+      .link-shortening-container {
+        display: flex;
+        padding: 1.9rem;
+        align-items: center;
+        flex-direction: column;
+        .link-shortening {
+          gap: 1.5rem;
+          width: 82%;
+          top: -71.69px;
+          flex-direction: row;
+          align-items: center;
+          border-radius: 0.7rem;
+          padding: 2.9rem 3.5rem;
+          background-size: cover;
+          justify-content: center;
+          background-image: url("../../assets/home/bg-shorten-desktop.svg");
+          .input-container {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            input {
+              width: 58vw;
+              padding: 1rem 1.5rem;
+              border-radius: 0.5rem;
+              @include texts(1rem, $VeryDarkViolet, 500);
+            }
+            p {
+              padding: 0;
+              bottom: -1.65rem;
+              position: absolute;
+              @include texts(1rem, $Red, 500);
+            }
+          }
+          button {
+            width: max-content;
+            margin-top: 0rem;
+            padding: 0.82rem 2rem;
+            border-radius: 0.5rem;
+            background-color: $Cyan;
+            @include texts(1.1rem, white, 700);
+            &:hover {
+              cursor: pointer;
+              background-color: hsl(180, 67%, 65%);
+            }
+          }
+        }
+      }
+      .shortened-link-result-container {
+        padding: 2.5rem 8rem;
+        .result {
+          display: flex;
+          padding: 1rem 2.5rem;
+          align-items: center;
+          margin-bottom: 1rem;
+          border-radius: 0.5rem;
+          justify-content: space-between;
+          .full-link {
+            padding: 0rem;
+            border-bottom: none;
+            width: 55%;
+            @include texts(1.1rem, $VeryDarkViolet, 500);
+          }
+          .shortened-link {
+            gap: 1rem;
+            width: 45%;
+            padding: 0rem;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            @include texts(1.1rem, $Cyan, 500);
+            p {
+              margin-bottom: 0rem;
+            }
+            button {
+              width: max-content;
+              padding: 0.5rem 1.5rem;
+              text-align: center;
+              border-radius: 0.3rem;
+              background-color: $Cyan;
+              @include texts(1.1rem, white, 500);
+              &:hover {
+                opacity: 0.6;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+      .cards-information-container {
+        align-items: center;
+        .title2 {
+          padding-top: 1rem;
+          text-align: center;
+          @include texts(2.2rem, $VeryDarkViolet, 700);
+        }
+        .text2 {
+          width: 40%;
+          line-height: 1.7rem;
+          margin-bottom: 3rem;
+          padding: 0.2rem 2.1rem 1.5rem 2.1rem;
+          @include texts(1.1rem, #9f9fa7, 500);
+        }
+      }
+      .cards {
+        gap: 2rem;
+        padding: 0 8rem;
+        flex-direction: row;
+        justify-content: center;
+        .line {
+          top: 49%;
+          left: 15rem;
+          width: 50vw;
+          height: 7px;
+          margin-left: 0;
+        }
+        .card {
+          width: 30%;
+          display: flex;
+          margin-bottom: 0;
+          border-radius: 0.6rem;
+          flex-direction: column;
+          justify-content: center;
+          padding: 3rem 1.3rem 2rem 1rem;
+          .icon-container {
+            left: 2rem;
+            top: -33px;
+            margin-left: 0;
+            img {
+              width: 34px;
+            }
+          }
+          .title-card {
+            margin: 0;
+            text-align: left;
+            padding: 0.5rem 1rem;
+            @include texts(1.5rem, $VeryDarkViolet, 700);
+          }
+          .text-card {
+            margin: 0;
+            padding: 0.5rem 0rem 0.5rem 1rem;
+            text-align: left;
+            line-height: 1.8rem;
+            @include texts(1rem, $Gray, 500);
+          }
+        }
+        .c2 {
+          top: 33px;
+        }
+        .c3 {
+          top: 66px;
+        }
+      }
+    }
+    .advertisement-contianer {
+      padding: 4rem 2rem;
+      background-image: url("../../assets/home/bg-boost-desktop.svg");
+      .advertisement {
+        padding: 1.2rem 0;
+        @include texts(2rem, white, 700);
+      }
+      button {
+        @include texts(1.3rem, white, 500);
+        &:hover {
+          cursor: pointer;
+          background-color: hsl(180, 67%, 65%);
+      }
+      }
     }
   }
 }

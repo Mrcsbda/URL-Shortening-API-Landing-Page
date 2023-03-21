@@ -89,3 +89,60 @@
 .nav-desktop-container {
     display: none;
 }
+
+
+@media (min-width: 1024px) {
+
+  .nav-mobile-container {
+    display: none;
+  }
+  .nav-desktop-container {
+    display: flex;
+    padding: 2.5rem 8rem;
+    justify-content: space-between;
+    @include texts(1rem, $Gray, 700);
+    .menu-container {
+      gap: 2.5rem;
+      display: flex;
+      align-items: center;
+      ul {
+        gap: 1.5rem;
+        display: flex;
+        list-style: none;
+        li {
+          &:hover {
+            cursor: pointer;
+            color: $VeryDarkViolet;
+          }
+        }
+      }
+    }
+    .buttons-container {
+      display: flex;
+      align-items: center;
+      ul {
+        gap: 2rem;
+        display: flex;
+        list-style: none;
+        align-items: center;
+        li {
+          text-align: center;
+          &:last-child {
+            background-color: $Cyan;
+            color: white;
+            padding: 0.6rem 1.7rem;
+            border-radius: 2rem;
+            &:hover {
+                opacity: 0.6;
+                cursor: pointer;
+            }
+          }
+          &:first-child:hover {
+              cursor: pointer;
+              color: $VeryDarkViolet;
+          }
+        }
+      }
+    }
+  } 
+}
