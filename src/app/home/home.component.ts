@@ -1,4 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -27,9 +28,26 @@ export class HomeComponent {
       class: 'card c3'
     },
   ]
+  shortenedLinksContainer: shortenedLinks[] = []
+
+  constructor(private httpClient: HttpClient) {}
+
   shortenLink(value:string) {
-    !value.length?this.active = true: this.active = false;
+    if (!value.length) {
+      this.active = true
+      return ;   
+    }
+    this.active = false
+    const url = `https://api.shrtco.de/v2/shorten?url=${value}/very/long/link.html`;
+    this.httpClient.post<Link>(url, value).subscribe((link: Link) => {
+      this.shortenedLinksContainer.push({
+        fullLink: value,
+        shortenedLink: link.result.full_short_link
+      });
+      console.log(link)
+    }); 
   }
+
   copyButton() {
   }
 }
@@ -39,4 +57,27 @@ interface CardsInformation {
   text: string;
   img: string;
   class: string;
+}
+
+interface shortenedLinks {
+  fullLink: string;
+  shortenedLink: string;
+}
+
+interface Link {
+  ok: boolean;
+  result: Result;
+}
+
+interface Result {
+  code: string;
+  short_link: string;
+  full_short_link: string;
+  short_link2: string;
+  full_short_link2: string;
+  short_link3: string;
+  full_short_link3: string;
+  share_link: string;
+  full_share_link: string;
+  original_link: string;
 }
