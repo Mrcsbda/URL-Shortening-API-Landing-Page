@@ -29,6 +29,7 @@ export class HomeComponent {
     },
   ]
   shortenedLinksContainer: shortenedLinks[] = []
+  selected:number|undefined
 
   constructor(private httpClient: HttpClient) {}
 
@@ -44,11 +45,11 @@ export class HomeComponent {
         fullLink: value,
         shortenedLink: link.result.full_short_link
       });
-      console.log(link)
     }); 
   }
 
-  copyButton() {
+  copyButton(value:string, index:number) {
+    this.selected = index;
   }
 }
 

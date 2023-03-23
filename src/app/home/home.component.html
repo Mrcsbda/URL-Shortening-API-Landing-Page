@@ -30,13 +30,13 @@
       <div class="shortened-links"></div>
     </section>
     <section class="shortened-link-result-container">
-      <div class="result" *ngFor="let item of shortenedLinksContainer">
+      <div class="result" *ngFor="let item of shortenedLinksContainer; let i = index">
         <div class="full-link">
           <p>{{item.fullLink}}</p>
         </div>
         <div class="shortened-link">
           <p>{{item.shortenedLink}}</p>
-          <button>Copy</button>
+          <button (click)="copyButton(item.shortenedLink, i)" [ngClass]="i===selected?'active':'noactive'">{{i===selected?'Copied!':'Copy'}}</button>
         </div>
       </div>
     </section>
