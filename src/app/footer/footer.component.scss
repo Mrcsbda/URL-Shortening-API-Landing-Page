@@ -43,15 +43,16 @@
     justify-content: space-between;
     padding-bottom: 4rem;
     .logo-container {
-      width: 37%;
+      width: 30%;
       padding: 4rem 0rem;
     }
     .menu-container {
-      padding-top: 4rem;
+      gap: 3rem;
       width: 37%;
+      padding-top: 4rem;
       flex-direction: row;
       align-items: flex-start;
-      gap: 3rem;
+      justify-content: center;
       .menu {
         margin-bottom: 0rem;
         h2 {
@@ -71,15 +72,15 @@
     }
     .icons-container {
       width: 23%;
-      align-items: flex-start;
       padding: 4.1rem 0 0 0;
+      align-items: flex-start;
       justify-content: flex-start;
       img {
         width: 1.5rem;
         height: 1.5rem;
         &:hover {
-            cursor: pointer;
-            filter: invert(60%) sepia(76%) saturate(390%) hue-rotate(131deg) brightness(96%) contrast(98%);
+          cursor: pointer;
+          filter: invert(60%) sepia(76%) saturate(390%) hue-rotate(131deg) brightness(96%) contrast(98%);
         }
       }
     }
