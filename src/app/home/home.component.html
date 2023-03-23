@@ -17,42 +17,56 @@
       <div class="link-shortening">
         <div class="input-container" [class.active]="active">
           <input
-          type="text"
-          name=""
-          id="link"
-          placeholder="Shorten a link here..."
-          #link
-        />
-        <p>Please add a link</p>
+            type="text"
+            name=""
+            id="link"
+            placeholder="Shorten a link here..."
+            #link
+          />
+          <p>Please add a link</p>
         </div>
-        <button (click)="shortenLink(link.value); link.value=''">Shorten it!</button>
+        <button (click)="shortenLink(link.value); link.value = ''">
+          Shorten it!
+        </button>
       </div>
       <div class="shortened-links"></div>
     </section>
     <section class="shortened-link-result-container">
-      <div class="result" *ngFor="let item of shortenedLinksContainer; let i = index">
+      <div
+        class="result"
+        *ngFor="let item of shortenedLinksContainer; let i = index"
+      >
         <div class="full-link">
-          <p>{{item.fullLink}}</p>
+          <p>{{ item.fullLink }}</p>
         </div>
         <div class="shortened-link">
-          <p>{{item.shortenedLink}}</p>
-          <button (click)="copyButton(item.shortenedLink, i)" [ngClass]="i===selected?'active':'noactive'">{{i===selected?'Copied!':'Copy'}}</button>
+          <p>{{ item.shortenedLink }}</p>
+          <button
+            (click)="copyButton(item.shortenedLink, i)"
+            [ngClass]="i === selected ? 'active' : 'noactive'"
+            [cdkCopyToClipboard]="item.shortenedLink"
+          >
+            {{ i === selected ? "Copied!" : "Copy" }}
+          </button>
         </div>
       </div>
     </section>
     <section class="cards--container">
       <div class="cards-information-container">
         <h2 class="title2">Advanced Statistics</h2>
-        <p class="text2">Track how your links are performing across the web with our advanced statistics dashboard.</p>
+        <p class="text2">
+          Track how your links are performing across the web with our advanced
+          statistics dashboard.
+        </p>
       </div>
       <div class="cards">
         <div class="line"></div>
         <div [class]="card.class" *ngFor="let card of cardsInformation">
-            <div class="icon-container">
-                <img class="icon" [src]="card.img" alt="">
-            </div>
-            <h3 class="title-card">{{card.title}}</h3>
-            <p class="text-card">{{card.text}}</p>
+          <div class="icon-container">
+            <img class="icon" [src]="card.img" alt="" />
+          </div>
+          <h3 class="title-card">{{ card.title }}</h3>
+          <p class="text-card">{{ card.text }}</p>
         </div>
       </div>
     </section>
@@ -62,5 +76,3 @@
     <button>Get Started</button>
   </article>
 </main>
-
-
