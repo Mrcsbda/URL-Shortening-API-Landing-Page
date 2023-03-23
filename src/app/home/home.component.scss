@@ -245,7 +245,7 @@
         padding: 0 0 0 8rem;
         .title {
           text-align: left;
-          line-height: 4.5rem;
+          line-height: 5.1rem;
           padding: 0 0 0.5rem 0;
           @include texts(4.5rem, $VeryDarkViolet, 700);
         }
@@ -253,7 +253,7 @@
           width: 80%;
           text-align: left;
           line-height: 2rem;
-          padding: 0 0 0.5rem 0;
+          padding: 0 0 1.5rem 0;
           margin-bottom: 1rem;
           @include texts(1.3rem, $Gray, 500);
         }
