@@ -39,7 +39,7 @@ export class HomeComponent {
       return ;   
     }
     this.active = false
-    const url = `https://api.shrtco.de/v2/shorten?url=${value}/very/long/link.html`;
+    const url = `https://api.shrtco.de/v2/shorten?url=${value}`;
     this.httpClient.post<Link>(url, value).subscribe((link: Link) => {
       this.shortenedLinksContainer.push({
         fullLink: value,
